@@ -18,6 +18,37 @@
     "test": "nodejs test/test.js"
   },
   "author": "strarsis <strarsis@gmail.com> (https://github.com/strarsis)",
-  "license": "ISC",
-  "description": "Generates include paths for node-sass for packages from popular package managers like npm, bower, ruby gem, ruby bundler."
+  "license": "MIT",
+  "description": "Generates include paths for node-sass for packages from popular package managers like npm, bower, ruby gem, ruby bundler.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strarsis/sass-include-paths.git"
+  },
+  "keywords": [
+    "sass",
+    "scss",
+    "include",
+    "include",
+    "paths",
+    "paths",
+    "path",
+    "npm",
+    "ruby",
+    "gem",
+    "bundle",
+    "bundler",
+    "gems",
+    "bower",
+    "nodejs",
+    "package",
+    "import",
+    "load",
+    "components",
+    "bower",
+    "components"
+  ],
+  "bugs": {
+    "url": "https://github.com/strarsis/sass-include-paths/issues"
+  },
+  "homepage": "https://github.com/strarsis/sass-include-paths#readme"
 }
