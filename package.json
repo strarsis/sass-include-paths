@@ -9,7 +9,7 @@
     "modularscale-sass": "^2.1.1"
   },
   "name": "sass-include-paths",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.js",
   "directories": {
     "test": "test"
