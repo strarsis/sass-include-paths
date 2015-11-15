@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "bluebird": "^3.0.5",
+    "glob": "^5.0.15",
+    "uniq": "^1.0.1"
+  },
+  "devDependencies": {
+    "eyeglass-math": "^1.0.1",
+    "modularscale-sass": "^2.1.1"
+  },
+  "name": "sass-include-paths",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "nodejs test/test.js"
+  },
+  "author": "strarsis <strarsis@gmail.com> (https://github.com/strarsis)",
+  "license": "ISC",
+  "description": ""
+}
