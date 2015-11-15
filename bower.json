@@ -1,13 +1,13 @@
 {
   "name": "sass-include-paths",
-  "description": "",
+  "description": "Generates include paths for node-sass for packages from popular package managers like npm, bower, ruby gem, ruby bundler.",
   "main": "index.js",
   "authors": [
     "strarsis <strarsis@gmail.com>"
   ],
   "license": "MIT",
   "moduleType": [],
-  "homepage": "",
+  "homepage": "https://github.com/strarsis/sass-include-paths",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -16,9 +16,9 @@
     "tests"
   ],
   "dependencies": {
-    "modular-scale": "~2.1.1"
   },
   "devDependencies": {
+    "modular-scale": "~2.1.1",
     "sass-toolkit": "~2.9.0"
   }
 }

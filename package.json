@@ -19,5 +19,5 @@
   },
   "author": "strarsis <strarsis@gmail.com> (https://github.com/strarsis)",
   "license": "ISC",
-  "description": ""
+  "description": "Generates include paths for node-sass for packages from popular package managers like npm, bower, ruby gem, ruby bundler."
 }
