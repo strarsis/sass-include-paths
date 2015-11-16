@@ -2,6 +2,7 @@
   "dependencies": {
     "bluebird": "^3.0.5",
     "glob": "^5.0.15",
+    "sync-exec": "^0.6.2",
     "uniq": "^1.0.1"
   },
   "devDependencies": {
