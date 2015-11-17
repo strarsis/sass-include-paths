@@ -1,33 +1,22 @@
-var path        = require('path'),
-    uniq        = require('uniq'),
-    Promise     = require('bluebird'),
-    globAsync   = Promise.promisify(require('glob')),
-    execAsync   = Promise.promisify(require('child_process').exec);
+'use strict';
+
+require('es6-shim'); // Object.assign (node 0.12.0)
+
+var path      = require('path'),
+    uniq      = require('uniq'),
+    glob      = require('glob'),
+    globSync  = glob.sync,
+    Promise   = require('bluebird'),
+    globAsync = Promise.promisify(glob),
+    rubyInfo  = require('./rubyInfo');
 
 
-var _rubyGemInfo = {
-  getGempath: function(cb) {
-    var child = execAsync('gem env gempath')
-    .then(function (stdout, stderr) {
-      cb(undefined, stdout);
-      return;
-    })
-    .catch(function(err){
-      cb(error, undefined);
-      return;
-    })
-    return;
-  }
-};
-
-var _trim = function(s){return s.trim();}
-var _gemPaths = function(cb) {
-  return Promise.promisify(_rubyGemInfo.getGempath)()
-  .then(function(gemPath) {
-    var gemPaths = gemPath.split(':').map(_trim);
-    cb(undefined, gemPaths);
-    return;
-  });
+var _opts = function(opts, defaults) {
+  var args = Object.assign(defaults, opts);
+  if( args.absolute == undefined) { args.absolute = defaults.absolute; }
+  if(!args.basePath) { args.basePath = defaults.basePath; }
+  if( args.absolute) { args.basePath = path.join(__dirname, args.basePath); }
+  return args;
 };
 
 
@@ -36,47 +25,83 @@ var sassLibFoldersGlobStr = '{stylesheets,sass,lib}';
 var sassFilesGlobStr      = '*.{sass,scss}';
 var sassGemsGlobStr       = path.join('gems/*', sassFoldersGlobStr);
 
-var nodeModules = function(nodeModulesDir) {
-  if(!nodeModulesDir) { nodeModulesDir = './node_modules'; }
-  return Promise.join(
-    globAsync(path.join(nodeModulesDir, '*')), // in some rare cases the styles may be directly in module folder
-    globAsync(path.join(nodeModulesDir, '*', sassLibFoldersGlobStr, sassFilesGlobStr))
-  )
-  .then(function(args) {
-    var scssNodePaths1Glob = args[0],
-        scssNodePaths2Glob = args[1],
-        scssNodePaths      = scssNodePaths1Glob.concat(scssNodePaths2Glob),
-        scssNodePathsDirs  = uniq(scssNodePaths.map(path.dirname));
+var _nodeModulesGlobStr = function(opts) {
+  var args = _opts(opts, {basePath: './node_modules', absolute: false});
+  var globStr1 = path.join(args.basePath, '*'); // in some rare cases the styles are directly in modules folder
+  var globStr2 = path.join(args.basePath, '*', sassLibFoldersGlobStr, sassFilesGlobStr);
+  var globStr  = '{' + [ globStr1, globStr2 ].join(',') + '}';
+  return globStr;
+};
+var nodeModules = function(opts) {
+  return globAsync(_nodeModulesGlobStr(opts))
+  .then(function(scssNodePaths) {
+    var scssNodePathsDirs = uniq(scssNodePaths.map(path.dirname));
     return scssNodePathsDirs;
   });
 };
-
-var rubyGemsBundle  = function(basePath) {
-  if(!basePath) { basePath = './vendor/bundle'; }
-  return globAsync(path.join(basePath, 'ruby/**', sassGemsGlobStr), {});
+var nodeModulesSync     = function(opts) {
+  var scssNodePaths     = globSync(_nodeModulesGlobStr(opts));
+  var scssNodePathsDirs = uniq(scssNodePaths.map(path.dirname));
+  return scssNodePathsDirs;
 };
 
-var rubyGems = function(cb) {
-  return Promise.promisify(_gemPaths)()
-  .then(function(gemPaths) {
-    var gemPathsGlob = '{' +
+
+var _rubyGemsBundleGlobStr = function(opts) {
+  var args    = _opts(opts, {basePath: './vendor/bundle', absolute: false});
+  var globStr = path.join(args.basePath, 'ruby/**', sassGemsGlobStr)
+  return globStr;
+};
+var rubyGemsBundle  = function(opts) {
+  return globAsync(_rubyGemsBundleGlobStr(opts), {});
+};
+var rubyGemsBundleSync = function(opts) {
+  return globSync(_rubyGemsBundleGlobStr(opts), {});
+};
+
+
+var _bowerComponentsGlobStr = function(opts) {
+  var args    = _opts(opts, {basePath: './bower_components', absolute: false});
+  var globStr = path.join(args.basePath, '*', sassFoldersGlobStr)
+  return globStr;
+};
+var bowerComponents = function(opts) {
+  return globAsync(_bowerComponentsGlobStr(opts), {});
+};
+var bowerComponentsSync = function(opts) {
+  return globSync(_bowerComponentsGlobStr(opts), {});
+};
+
+
+// always uses absolute paths and determined base path (system installed)
+var _rubyGemsGlobStr = function(gemPaths) {
+  var globStr   =
+  '{' +
     gemPaths.map(function(gemPath){
       return path.join(gemPath, sassGemsGlobStr);
-    })
-    .join(',') +
-    '}';
-
-    return globAsync(gemPathsGlob, {});
+    }).join(',') +
+  '}';
+  return globStr;
+};
+var rubyGems = function(cb) {
+  return rubyInfo.gemPathsAsync()
+  .then(function(gemPaths) {
+    return globAsync(_rubyGemsGlobStr(gemPaths), {});
   });
 };
-
-var bowerComponents = function(basePath) {
-  if(!basePath) { basePath = './bower_components'; }
-  return globAsync(path.join(basePath, '*', sassFoldersGlobStr), {});
+var rubyGemsSync = function() {
+  var gemPaths   = rubyInfo.gemPathsSync();
+  return globSync(_rubyGemsGlobStr(gemPaths), {});
 };
 
 
-module.exports.nodeModules     = nodeModules;
-module.exports.rubyGems        = rubyGems;
-module.exports.rubyGemsBundle  = rubyGemsBundle;
-module.exports.bowerComponents = bowerComponents;
+module.exports.nodeModules         = nodeModules;
+module.exports.nodeModulesSync     = nodeModulesSync;
+
+module.exports.rubyGems            = rubyGems;
+module.exports.rubyGemsSync        = rubyGemsSync;
+
+module.exports.rubyGemsBundle      = rubyGemsBundle;
+module.exports.rubyGemsBundleSync  = rubyGemsBundleSync;
+
+module.exports.bowerComponents     = bowerComponents;
+module.exports.bowerComponentsSync = bowerComponentsSync;
