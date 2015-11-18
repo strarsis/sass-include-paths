@@ -8,7 +8,9 @@
   },
   "devDependencies": {
     "eyeglass-math": "^1.0.1",
-    "modularscale-sass": "^2.1.1"
+    "modularscale-sass": "^2.1.1",
+    "normalize-scss": "^3.0.3",
+    "tape": "^4.2.2"
   },
   "name": "sass-include-paths",
   "version": "3.0.0",
