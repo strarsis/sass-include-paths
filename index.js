@@ -27,7 +27,8 @@ var sassGemsGlobStr       = path.join('gems/*', sassFoldersGlobStr);
 
 var _nodeModulesGlobStr = function(opts) {
   var args = _opts(opts, {basePath: './node_modules', absolute: false});
-  var globStr1 = path.join(args.basePath, '*'); // in some rare cases the styles are directly in modules folder
+  // in some rare cases the styles are directly inside the module folder
+  var globStr1 = path.join(args.basePath, '*',                        sassFilesGlobStr);
   var globStr2 = path.join(args.basePath, '*', sassLibFoldersGlobStr, sassFilesGlobStr);
   var globStr  = '{' + [ globStr1, globStr2 ].join(',') + '}';
   return globStr;
