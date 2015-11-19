@@ -2,13 +2,13 @@
 Generates include paths for node-sass for packages from popular package managers like npm, bower, ruby gem, ruby bundler.
 
 The generated array with the include paths can be passed to node-sass.
-This allows interoperability between sass variants, ruby sass, libsass and sass-eyeglass (libsass + eyeglass)
+Thllows interoperability between sass variants, ruby sass, libsass and sass-eyeglass (libsass + eyeglass)
 
 
 Async/Sync
 ----------
 This module offers an async and a sync version of each function.
-The async version is a thenable (Promise based) for easier chaining.
+The async version returns a thenable (Promise based) for easier chaining.
 The sync version is intended for being used in tools like Gulp where this doesn't matter in a task.
 
 
