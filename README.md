@@ -31,9 +31,9 @@ For importing sass/scss files from sass/eyeglass npm packages...
 #### using gulp-ruby-sass (ruby sass)
 ````
 [...]
-    rubySass(srcAssets.scss + '/*.scss', {
-      loadPath: scssIncludePaths.concat(sassIncl.nodeModulesSync());
-    })
+  rubySass(srcAssets.scss + '/*.scss', {
+    loadPath: scssIncludePaths.concat(sassIncl.nodeModulesSync());
+  })
 [...]
 ````
 As gulp-ruby-sass (ruby-sass) already imports sass/scss files from ruby gems 
@@ -63,7 +63,7 @@ For importing sass/scss files from plain npm packages and from ruby gems and loc
 ````
 [...]
 var eyeglass = new Eyeglass({
-  includePaths:    scssIncludePaths
+  includePaths: scssIncludePaths
     .concat(sassIncl.nodeModulesSync())
     .concat(sassIncl.rubyGemsSync())
     .concat(sassIncl.rubyGemsBundleSync()),
