@@ -1,7 +1,7 @@
 # sass-include-paths
 Generates include paths for node-sass for packages from popular package managers like npm, bower, ruby gem, ruby bundler.
 
-[![NPM](https://nodei.co/npm/include-sass-paths.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/include-sass-paths/)
+[![NPM](https://nodei.co/npm/sass-include-paths.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/sass-include-paths/)
 
 The generated array with the include paths can be passed to node-sass.
 Thllows interoperability between sass variants, ruby sass, libsass and sass-eyeglass (libsass + eyeglass)
