@@ -4,7 +4,8 @@ Generates include paths for node-sass for packages from popular package managers
 [![NPM](https://nodei.co/npm/sass-include-paths.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/sass-include-paths/)
 
 The generated array with the include paths can be passed to node-sass.
-Thllows interoperability between sass variants, ruby sass, libsass and sass-eyeglass (libsass + eyeglass)
+
+Allows interoperability between sass variants, ruby sass, libsass and sass-eyeglass (libsass + eyeglass)
 
 
 Async/Sync
