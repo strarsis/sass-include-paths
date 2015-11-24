@@ -21,10 +21,10 @@ Methods
 ### node modules
 For node modules that contain SCSS/SASS files.
 
-#### nodeModulesSync
+#### nodeModulesSync()
 Sync version, returns the array directly.
 
-#### nodeModules
+#### nodeModules()
 Async version, returns a theneable.
 
 
@@ -32,10 +32,10 @@ Async version, returns a theneable.
 ### bower components
 For bower components that contain SCSS/SASS files.
 
-#### bowerComponentsSync
+#### bowerComponentsSync()
 Sync version, returns the array directly.
 
-#### bowerComponents
+#### bowerComponents()
 Async version, returns a theneable.
 
 
@@ -43,21 +43,21 @@ Async version, returns a theneable.
 ### bundled ruby gems
 For bundled ruby gems installed in folder by bundler (default is ./vendor/bundle) that contain SCSS/SASS files.
 
-#### rubyGemsBundleSync
+#### rubyGemsBundleSync()
 Sync version, returns the array directly.
 
-#### rubyGemsBundle
+#### rubyGemsBundle()
 Async version, returns a theneable.
 
 
 
-### ruby gems on system/global
+### system/global ruby gems
 For ruby gems installed on current (activated/available) ruby environment (system/globally installed gems) that contain SCSS/SASS files.
 
-#### rubyGemsSync
+#### rubyGemsSync()
 Sync version, returns the array directly.
 
-#### rubyGems
+#### rubyGems()
 Async version, returns a theneable.
 
 
