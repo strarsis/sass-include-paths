@@ -15,6 +15,53 @@ The async version returns a thenable (Promise based) for easier chaining.
 The sync version is intended for being used in tools like Gulp where this doesn't matter in a task.
 
 
+Methods
+-------
+
+### node modules
+For node modules that contain SCSS/SASS files.
+
+#### nodeModulesSync
+Sync version, returns the array directly.
+
+#### nodeModules
+Async version, returns a theneable.
+
+
+
+### bower components
+For bower components that contain SCSS/SASS files.
+
+#### bowerComponentsSync
+Sync version, returns the array directly.
+
+#### bowerComponents
+Async version, returns a theneable.
+
+
+
+### bundled ruby gems
+For bundled ruby gems installed in folder by bundler (default is ./vendor/bundle) that contain SCSS/SASS files.
+
+#### rubyGemsBundleSync
+Sync version, returns the array directly.
+
+#### rubyGemsBundle
+Async version, returns a theneable.
+
+
+
+### ruby gems on system/global
+For ruby gems installed on current (activated/available) ruby environment (system/globally installed gems) that contain SCSS/SASS files.
+
+#### rubyGemsSync
+Sync version, returns the array directly.
+
+#### rubyGems
+Async version, returns a theneable.
+
+
+
 Usage
 -----
 
