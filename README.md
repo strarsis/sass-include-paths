@@ -1,6 +1,8 @@
 # sass-include-paths
 Generates include paths for node-sass for packages from popular package managers like npm, bower, ruby gem, ruby bundler.
 
+[![david](https://david-dm.org/strarsis/sass-include-paths.svg)](https://david-dm.org/strarsis/sass-include-paths)
+
 [![NPM](https://nodei.co/npm/sass-include-paths.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/sass-include-paths/)
 
 The generated array with the include paths can be passed to node-sass.
