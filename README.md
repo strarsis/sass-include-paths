@@ -74,17 +74,21 @@ var sassIncl = require('sass-include-paths'),
     scssIncludePaths = [];
 ````
 
-Now one can either invoke the module functions outside the task scope 
-or inside the task scope for a scan on demand (as in these examples) 
-(e.g. in case you add/move files during gulp watch for example).
+When the module functions are invoked outside the task scope,
+the scan is run only once when gulp is started, notably when using gulp-watch.
+This spares extra scans each time workspace files are changed.
+When packages, gems or bower components are changed, gulp watch has to be restarted for a rescan.
 
 
 For importing sass/scss files from sass/eyeglass npm packages...
 #### using gulp-ruby-sass (ruby sass)
 ````
 [...]
+scssIncludePaths = [] // additional include paths
+  .concat(sassIncl.nodeModulesSync());
+[...]
   rubySass(srcAssets.scss + '/*.scss', {
-    loadPath: scssIncludePaths.concat(sassIncl.nodeModulesSync());
+    loadPath: scssIncludePaths
   })
 [...]
 ````
@@ -97,11 +101,13 @@ For importing sass/scss files from plain or eyeglass npm packges and from ruby g
 #### using gulp-sass (plain libsass)
 ````
 [...]
+scssIncludePaths = [] // additional include paths
+  .concat(sassIncl.nodeModulesSync())
+  .concat(sassIncl.rubyGemsSync())
+  .concat(sassIncl.rubyGemsBundleSync());
+[...]
   .pipe(plugins.sass({
     includePaths: scssIncludePaths
-      .concat(sassIncl.nodeModulesSync())
-      .concat(sassIncl.rubyGemsSync())
-      .concat(sassIncl.rubyGemsBundleSync())
   }))
 [...]
 ````
@@ -114,11 +120,14 @@ For importing sass/scss files from plain npm packages and from ruby gems and loc
 #### using eyeglass (libsass + eyeglass) 
 ````
 [...]
+// Outside the gulp task
+scssIncludePaths = [] // additional include paths
+  .concat(sassIncl.nodeModulesSync())
+  .concat(sassIncl.rubyGemsSync())
+  .concat(sassIncl.rubyGemsBundleSync()):
+[...]
 var eyeglass = new Eyeglass({
   includePaths: scssIncludePaths
-    .concat(sassIncl.nodeModulesSync())
-    .concat(sassIncl.rubyGemsSync())
-    .concat(sassIncl.rubyGemsBundleSync()),
 });
 [...]
 ````
