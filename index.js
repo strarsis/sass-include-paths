@@ -21,7 +21,7 @@ var _opts = function(opts, defaults) {
 
 
 var sassFoldersGlobStr    = '{stylesheets,sass}';
-var sassLibFoldersGlobStr = '{stylesheets,sass,lib,dist}';
+var sassLibFoldersGlobStr = '{stylesheets,sass,lib,dist,assets/sass}';
 var sassFilesGlobStr      = '*.{sass,scss}';
 var sassGemsGlobStr       = path.join('gems/*', sassFoldersGlobStr);
 

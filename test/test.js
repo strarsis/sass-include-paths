@@ -51,6 +51,7 @@ test('works with node_modules', function (t) {
     'node_modules/eyeglass-math/sass',
     'node_modules/modularscale-sass/stylesheets',
     'node_modules/normalize-scss',
+    'node_modules/sassline/assets/sass',
     'node_modules/scut/dist'
   ]);
 });
