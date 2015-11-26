@@ -15,7 +15,7 @@
     "tape": "^4.2.2"
   },
   "name": "sass-include-paths",
-  "version": "3.6.0",
+  "version": "3.8.0",
   "main": "index.js",
   "directories": {
     "test": "test"
