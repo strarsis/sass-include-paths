@@ -12,7 +12,8 @@
     "normalize-scss": "^3.0.3",
     "sassline": "^2.1.0",
     "scut": "^1.3.0",
-    "tape": "^4.2.2"
+    "tape": "^4.2.2",
+    "time-require": "^0.1.2"
   },
   "name": "sass-include-paths",
   "version": "3.8.0",
