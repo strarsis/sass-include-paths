@@ -49,7 +49,7 @@ var nodeModulesSync     = function(opts) {
 
 var _rubyGemsBundleGlobStr = function(opts) {
   var args    = _opts(opts, {basePath: './vendor/bundle', absolute: false});
-  var globStr = path.join(args.basePath, 'ruby/**', sassGemsGlobStr)
+  var globStr = path.join(args.basePath, 'ruby/*', sassGemsGlobStr)
   return globStr;
 };
 var rubyGemsBundle  = function(opts) {
