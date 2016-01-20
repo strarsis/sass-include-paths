@@ -135,3 +135,13 @@ One use case to also add node_module paths when using eyeglass
 is to be able to import npm packages that haven't been made eyeglass-ready yet.
 Though it may work fine using this module, please still consider creating an issue 
 to inform the package creator that eyeglass metadata is still missing for the package.
+
+
+Development
+-----------
+In order to run the tests, npm, bower and ruby gem/bundler have to be available.
+bower will be installed as development dependency of this package.
+For consistent tests, the ruby and node versions have been locked using rvm/nvm config files, 
+so both or similar tools have to be installed to ensure the right versions and isolation.
+
+./test/prepare.sh can be run for quickly installing the bower dependencies and ruby bundle.
