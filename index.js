@@ -13,7 +13,7 @@ var path      = require('path'),
 
 var _opts = function(opts, defaults) {
   var args = Object.assign(defaults, opts);
-  if( args.absolute == undefined) { args.absolute = defaults.absolute; }
+  if( args.absolute === undefined) { args.absolute = defaults.absolute; }
   if(!args.basePath) { args.basePath = defaults.basePath; }
   if( args.absolute) { args.basePath = path.join(__dirname, args.basePath); }
   return args;
@@ -21,7 +21,7 @@ var _opts = function(opts, defaults) {
 
 
 var sassFoldersGlobStr    = '{stylesheets,sass}';
-var sassLibFoldersGlobStr = '{stylesheets,sass,lib,dist,assets/sass}';
+var sassLibFoldersGlobStr = '{stylesheets,sass,lib,dist,assets/sass,scss}';
 var sassFilesGlobStr      = '*.{sass,scss}';
 var sassGemsGlobStr       = path.join('gems/*', sassFoldersGlobStr);
 
@@ -49,7 +49,7 @@ var nodeModulesSync     = function(opts) {
 
 var _rubyGemsBundleGlobStr = function(opts) {
   var args    = _opts(opts, {basePath: './vendor/bundle', absolute: false});
-  var globStr = path.join(args.basePath, 'ruby/*', sassGemsGlobStr)
+  var globStr = path.join(args.basePath, 'ruby/*', sassGemsGlobStr);
   return globStr;
 };
 var rubyGemsBundle  = function(opts) {
@@ -62,7 +62,7 @@ var rubyGemsBundleSync = function(opts) {
 
 var _bowerComponentsGlobStr = function(opts) {
   var args    = _opts(opts, {basePath: './bower_components', absolute: false});
-  var globStr = path.join(args.basePath, '*', sassFoldersGlobStr)
+  var globStr = path.join(args.basePath, '*', sassFoldersGlobStr);
   return globStr;
 };
 var bowerComponents = function(opts) {
