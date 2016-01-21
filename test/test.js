@@ -48,6 +48,7 @@ test('works with node_modules', function (t) {
 
   t.plan(4);
   testFull(t, sassImp.nodeModules, sassImp.nodeModulesSync, [
+    'node_modules/bootstrap-sass/assets/stylesheets',
     'node_modules/eyeglass-math/sass',
     'node_modules/font-awesome/scss',
     'node_modules/modularscale-sass/stylesheets',
