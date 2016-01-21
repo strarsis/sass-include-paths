@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
-bower install
+bower install --config.interactive=false
 bundle install --path vendor/bundle
