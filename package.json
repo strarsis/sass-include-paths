@@ -9,6 +9,7 @@
   "devDependencies": {
     "bower": "^1.7.2",
     "eyeglass-math": "^1.0.1",
+    "font-awesome": "^4.5.0",
     "modularscale-sass": "^2.1.1",
     "normalize-scss": "^4.0.3",
     "sassline": "^2.1.0",
