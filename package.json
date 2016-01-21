@@ -7,6 +7,7 @@
     "uniq": "^1.0.1"
   },
   "devDependencies": {
+    "bower": "^1.7.2",
     "eyeglass-math": "^1.0.1",
     "modularscale-sass": "^2.1.1",
     "normalize-scss": "^4.0.3",
