@@ -1,0 +1,2 @@
+ruby:
+  image: ruby:2.2   
