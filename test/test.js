@@ -43,8 +43,13 @@ var testFull = function(t, fnAsync, fnSync, pathsExpectedRel) {
 test('works with node_modules', function (t) {
 
   // (in this package dev dependencies)
+  // $ npm install bootstrap-sass@3.3.6
   // $ npm install eyeglass-math@1.0.1
+  // $ npm install font-awesome@4.5.0
   // $ npm install modularscale-sass@2.1.1
+  // $ npm install normalize-scss@4.0.3
+  // $ npm install sassline@2.1.0
+  // $ npm install scut@1.3.0
 
   t.plan(4);
   testFull(t, sassImp.nodeModules, sassImp.nodeModulesSync, [
@@ -83,6 +88,7 @@ test('works with bower components folder', function (t) {
 
   // (in this package bower.json
   // modular-scale  2.1.1
+  // sass-toolki    9.2.0
 
   // $ npm install -g bower
   // $ bower install
