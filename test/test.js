@@ -89,12 +89,18 @@ test('works with bower components folder', function (t) {
   // (in this package bower.json
   // modular-scale  2.1.1
   // sass-toolki    9.2.0
+  // Scut           1.3.1
+  // bootstrap-sass 3.3.6
+  // font-awesome   4.5.0
 
   // $ npm install -g bower
   // $ bower install
 
   t.plan(4);
   testFull(t, sassImp.bowerComponents, sassImp.bowerComponentsSync, [
+    'bower_components/Scut/dist',
+    'bower_components/bootstrap-sass/assets/stylesheets',
+    'bower_components/font-awesome/scss',
     'bower_components/modular-scale/stylesheets',
     'bower_components/sass-toolkit/stylesheets'
   ]);
