@@ -34,14 +34,14 @@ var _nodeModulesGlobStr = function(opts) {
   return globStr;
 };
 var nodeModules = function(opts) {
-  return globAsync(_nodeModulesGlobStr(opts))
+  return globAsync(_nodeModulesGlobStr(opts), {})
   .then(function(scssNodePaths) {
     var scssNodePathsDirs = uniq(scssNodePaths.map(path.dirname));
     return scssNodePathsDirs;
   });
 };
 var nodeModulesSync     = function(opts) {
-  var scssNodePaths     = globSync(_nodeModulesGlobStr(opts));
+  var scssNodePaths     = globSync(_nodeModulesGlobStr(opts), {});
   var scssNodePathsDirs = uniq(scssNodePaths.map(path.dirname));
   return scssNodePathsDirs;
 };
@@ -62,14 +62,20 @@ var rubyGemsBundleSync = function(opts) {
 
 var _bowerComponentsGlobStr = function(opts) {
   var args    = _opts(opts, {basePath: './bower_components', absolute: false});
-  var globStr = path.join(args.basePath, '*', sassFoldersGlobStr);
+  var globStr = path.join(args.basePath, '*', sassLibFoldersGlobStr, sassFilesGlobStr);
   return globStr;
 };
 var bowerComponents = function(opts) {
-  return globAsync(_bowerComponentsGlobStr(opts), {});
+  return globAsync(_bowerComponentsGlobStr(opts), {})
+  .then(function(scssBowerPaths) {
+    var scssBowerPathsDirs = uniq(scssBowerPaths.map(path.dirname));
+    return scssBowerPathsDirs;
+  });
 };
 var bowerComponentsSync = function(opts) {
-  return globSync(_bowerComponentsGlobStr(opts), {});
+  var scssBowerPaths     = globSync(_bowerComponentsGlobStr(opts), {});
+  var scssBowerPathsDirs = uniq(scssBowerPaths.map(path.dirname));
+  return scssBowerPathsDirs;
 };
 
 
