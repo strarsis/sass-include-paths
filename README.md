@@ -69,7 +69,7 @@ Usage
 
 Require this module and optionally define an array of include paths, 
 either empty or already with some paths to include:
-````
+```javascript
 var sassIncl = require('sass-include-paths'),
     scssIncludePaths = [];
 ````
@@ -82,7 +82,7 @@ When packages, gems or bower components are changed, gulp watch has to be restar
 
 For importing sass/scss files from sass/eyeglass npm packages...
 #### using gulp-ruby-sass (ruby sass)
-````
+```javascript
 [...]
 scssIncludePaths = [] // additional include paths
   .concat(sassIncl.nodeModulesSync());
@@ -99,7 +99,7 @@ there is no need to pass paths to these, too.
 
 For importing sass/scss files from plain or eyeglass npm packges and from ruby gems and local bundle...
 #### using gulp-sass (plain libsass)
-````
+```javascript
 [...]
 scssIncludePaths = [] // additional include paths
   .concat(sassIncl.nodeModulesSync())
@@ -118,7 +118,7 @@ however, even using eyeglass, there is still an use case (see further below).
 
 For importing sass/scss files from plain npm packages and from ruby gems and local bundle...
 #### using eyeglass (libsass + eyeglass) 
-````
+```javascript
 [...]
 // Outside the gulp task
 scssIncludePaths = [] // additional include paths
