@@ -31,6 +31,3 @@ PLATFORMS
 DEPENDENCIES
   modular-scale (~> 2.1, >= 2.1.1)
   toolkit (~> 2.9)
-
-BUNDLED WITH
-   1.10.6
