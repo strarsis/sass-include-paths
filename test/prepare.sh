@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-bower install --config.interactive=false
+./node_modules/.bin/bower install --config.interactive=false && \
 
-gem install bundler --no-ri --no-rdoc
+gem install bundler --no-ri --no-rdoc && \
 bundle install --path vendor/bundle
