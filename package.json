@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "bluebird": "^3.0.5",
-    "es6-shim": "^0.34.1",
+    "es6-shim": "^0.35.1",
     "glob": "^7.0.0",
     "sync-exec": "^0.6.2",
     "uniq": "^1.0.1"
