@@ -20,7 +20,7 @@
     "time-require": "^0.1.2"
   },
   "name": "sass-include-paths",
-  "version": "4.5.0",
+  "version": "4.5.1",
   "main": "index.js",
   "directories": {
     "test": "test"
