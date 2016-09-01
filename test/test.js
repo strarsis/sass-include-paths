@@ -87,11 +87,15 @@ test('works with local ruby bundle', function (t) {
 test('works with bower components folder', function (t) {
 
   // (in this package bower.json
-  // modular-scale  2.1.1
-  // sass-toolki    9.2.0
-  // Scut           1.3.1
-  // bootstrap-sass 3.3.6
-  // font-awesome   4.5.0
+  // modular-scale   2.1.1
+  // sass-toolki     9.2.0
+  // Scut            1.3.1
+  // bootstrap-sass  3.3.6
+  // font-awesome    4.5.0
+  // normalize-scss  3.0.3
+  // sass-mq         3.2.9
+  // neutroncss      0.9.2
+  // sass-flex-mixin 1.0.3
 
   // $ npm install -g bower
   // $ bower install
@@ -102,6 +106,10 @@ test('works with bower components folder', function (t) {
     'bower_components/bootstrap-sass/assets/stylesheets',
     'bower_components/font-awesome/scss',
     'bower_components/modular-scale/stylesheets',
+    'bower_components/neutroncss',
+    'bower_components/normalize-scss',
+    'bower_components/sass-flex-mixin',
+    'bower_components/sass-mq',
     'bower_components/sass-toolkit/stylesheets'
   ]);
 });
@@ -115,7 +123,7 @@ test('works with global ruby gems', function (t) {
 
   // Always uses absolute paths.
 
-  t.plan(2);
+  t.plan(3);
   testAbs(t, sassImp.rubyGems, sassImp.rubyGemsSync, [
     '/home/build/.rvm/gems/ruby-2.2.3@sass-include-paths/gems/compass-core-1.0.3/stylesheets',
     '/home/build/.rvm/gems/ruby-2.2.3@sass-include-paths/gems/modular-scale-2.1.1/stylesheets',

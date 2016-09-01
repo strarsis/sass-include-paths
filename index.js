@@ -62,7 +62,10 @@ var rubyGemsBundleSync = function(opts) {
 
 var _bowerComponentsGlobStr = function(opts) {
   var args    = _opts(opts, {basePath: './bower_components', absolute: false});
-  var globStr = path.join(args.basePath, '*', sassLibFoldersGlobStr, sassFilesGlobStr);
+  // in some cases the styles are directly inside the module folder
+  var globStr1 = path.join(args.basePath, '*',                        sassFilesGlobStr);
+  var globStr2 = path.join(args.basePath, '*', sassLibFoldersGlobStr, sassFilesGlobStr);
+  var globStr  = '{' + [ globStr1, globStr2 ].join(',') + '}';
   return globStr;
 };
 var bowerComponents = function(opts) {
