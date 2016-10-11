@@ -144,4 +144,4 @@ bower will be installed as development dependency of this package.
 For consistent tests, the ruby and node versions have been locked using rvm/nvm config files, 
 so both or similar tools have to be installed to ensure the right versions and isolation.
 
-./test/prepare.sh can be run for quickly installing the bower dependencies and ruby bundle.
+./test/prepare.sh can be run after `npm install` for quickly installing the bower dependencies and ruby bundle.
