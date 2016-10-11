@@ -25,6 +25,7 @@
     "normalize-scss": "^3.0.3",
     "sass-mq": "^3.2.9",
     "neutroncss": "^0.9.2",
-    "sass-flex-mixin": "^1.0.3"
+    "sass-flex-mixin": "^1.0.3",
+    "shevy": "^2.1.0"
   }
 }

@@ -71,6 +71,7 @@ test('works with local ruby bundle', function (t) {
   // (in this package Gemfile)
   // modular-scale  2.1.1
   // toolkit        2.9.0
+  // shevy          2.0.0
 
   // $ gem install bundler # important for bundler+rake
   // $ bundle install --path vendor/bundle
@@ -79,6 +80,7 @@ test('works with local ruby bundle', function (t) {
   testFull(t, sassImp.rubyGemsBundle, sassImp.rubyGemsBundleSync, [
     'vendor/bundle/ruby/2.2.0/gems/compass-core-1.0.3/stylesheets',
     'vendor/bundle/ruby/2.2.0/gems/modular-scale-2.1.1/stylesheets',
+    'vendor/bundle/ruby/2.2.0/gems/shevy-2.0.0/core',
     'vendor/bundle/ruby/2.2.0/gems/toolkit-2.9.0/stylesheets'
   ]);
 });
@@ -96,6 +98,7 @@ test('works with bower components folder', function (t) {
   // sass-mq         3.2.9
   // neutroncss      0.9.2
   // sass-flex-mixin 1.0.3
+  // shevy           2.1.0
 
   // $ npm install -g bower
   // $ bower install
@@ -110,7 +113,8 @@ test('works with bower components folder', function (t) {
     'bower_components/normalize-scss',
     'bower_components/sass-flex-mixin',
     'bower_components/sass-mq',
-    'bower_components/sass-toolkit/stylesheets'
+    'bower_components/sass-toolkit/stylesheets',
+    'bower_components/shevy/core'
   ]);
 });
 
