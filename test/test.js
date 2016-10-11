@@ -50,6 +50,7 @@ test('works with node_modules', function (t) {
   // $ npm install normalize-scss@4.0.3
   // $ npm install sassline@2.1.0
   // $ npm install scut@1.3.0
+  // $ npm install github:kyleshevlin/shevy#2.0.0
 
   t.plan(4);
   testFull(t, sassImp.nodeModules, sassImp.nodeModulesSync, [
@@ -60,6 +61,7 @@ test('works with node_modules', function (t) {
     'node_modules/normalize-scss/sass',
     'node_modules/sassline/assets/sass',
     'node_modules/scut/dist',
+    'node_modules/shevy/core',
     'node_modules/support-for/sass'
   ]);
 });
