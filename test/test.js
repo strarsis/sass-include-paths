@@ -50,7 +50,7 @@ test('works with node_modules', function (t) {
   // $ npm install normalize-scss@4.0.3
   // $ npm install sassline@2.1.0
   // $ npm install scut@1.3.0
-  // $ npm install github:kyleshevlin/shevy#2.0.0
+  // $ npm install github:kyleshevlin/shevy#2.1.0
 
   t.plan(4);
   testFull(t, sassImp.nodeModules, sassImp.nodeModulesSync, [
@@ -73,7 +73,7 @@ test('works with local ruby bundle', function (t) {
   // (in this package Gemfile)
   // modular-scale  2.1.1
   // toolkit        2.9.0
-  // shevy          2.0.0
+  // shevy          2.1.0
 
   // $ gem install bundler # important for bundler+rake
   // $ bundle install --path vendor/bundle
@@ -82,7 +82,7 @@ test('works with local ruby bundle', function (t) {
   testFull(t, sassImp.rubyGemsBundle, sassImp.rubyGemsBundleSync, [
     'vendor/bundle/ruby/2.2.0/gems/compass-core-1.0.3/stylesheets',
     'vendor/bundle/ruby/2.2.0/gems/modular-scale-2.1.1/stylesheets',
-    'vendor/bundle/ruby/2.2.0/gems/shevy-2.0.0/core',
+    'vendor/bundle/ruby/2.2.0/gems/shevy-2.1.0/core',
     'vendor/bundle/ruby/2.2.0/gems/toolkit-2.9.0/stylesheets'
   ]);
 });
