@@ -8,7 +8,7 @@ var path      = require('path'),
     globSync  = glob.sync,
     Promise   = require('bluebird'),
     globAsync = Promise.promisify(glob),
-    rubyInfo  = require('./rubyInfo');
+    rubyInfo  = require('./ruby-info');
 
 
 var _opts = function(opts, defaults) {
