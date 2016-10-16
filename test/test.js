@@ -1,7 +1,7 @@
 'use strict';
 
-var test     = require('tape'),
-    sassImp  = require('../');
+var test             = require('tape'),
+    sassIncludePaths = require('../');
 
 
 var path      = require('path'),
@@ -53,7 +53,7 @@ test('works with node_modules', function (t) {
   // $ npm install github:kyleshevlin/shevy#2.1.0
 
   t.plan(4);
-  testFull(t, sassImp.nodeModules, sassImp.nodeModulesSync, [
+  testFull(t, sassIncludePaths.nodeModules, sassIncludePaths.nodeModulesSync, [
     'node_modules/bootstrap-sass/assets/stylesheets',
     'node_modules/eyeglass-math/sass',
     'node_modules/font-awesome/scss',
@@ -79,7 +79,7 @@ test('works with local ruby bundle', function (t) {
   // $ bundle install --path vendor/bundle
 
   t.plan(4);
-  testFull(t, sassImp.rubyGemsBundle, sassImp.rubyGemsBundleSync, [
+  testFull(t, sassIncludePaths.rubyGemsBundle, sassIncludePaths.rubyGemsBundleSync, [
     'vendor/bundle/ruby/2.2.0/gems/compass-core-1.0.3/stylesheets',
     'vendor/bundle/ruby/2.2.0/gems/modular-scale-2.1.1/stylesheets',
     'vendor/bundle/ruby/2.2.0/gems/shevy-2.1.0/core',
@@ -106,7 +106,7 @@ test('works with bower components folder', function (t) {
   // $ bower install
 
   t.plan(4);
-  testFull(t, sassImp.bowerComponents, sassImp.bowerComponentsSync, [
+  testFull(t, sassIncludePaths.bowerComponents, sassIncludePaths.bowerComponentsSync, [
     'bower_components/Scut/dist',
     'bower_components/bootstrap-sass/assets/stylesheets',
     'bower_components/font-awesome/scss',
@@ -130,7 +130,7 @@ test('works with global ruby gems', function (t) {
   // Always uses absolute paths.
 
   t.plan(3);
-  testAbs(t, sassImp.rubyGems, sassImp.rubyGemsSync, [
+  testAbs(t, sassIncludePaths.rubyGems, sassIncludePaths.rubyGemsSync, [
     '/home/build/.rvm/gems/ruby-2.2.3@sass-include-paths/gems/compass-core-1.0.3/stylesheets',
     '/home/build/.rvm/gems/ruby-2.2.3@sass-include-paths/gems/modular-scale-2.1.1/stylesheets',
     '/home/build/.rvm/gems/ruby-2.2.3@sass-include-paths/gems/toolkit-2.9.0/stylesheets'
