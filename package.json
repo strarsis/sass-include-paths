@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "array-flatten": "^2.1.0",
     "bluebird": "^3.0.5",
     "es6-shim": "^0.35.1",
     "glob": "^7.0.0",
