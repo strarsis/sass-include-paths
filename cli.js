@@ -3,15 +3,21 @@
 
 var Promise          = require('bluebird'),
     flatten          = require('array-flatten'),
+    yargs            = require('yargs'),
     sassIncludePaths = require('./'),
     sasscIncludeArgs = require('./lib/sassc-include-args');
 
-var argv = require('yargs')
+var argv = yargs
+
+    .alias('v', 'version')
+    .version(function() { return require('./package').version; })
+
     .boolean('node_modules')
     .boolean('bower_components')
     .boolean('ruby-gems-bundle')
     .boolean('ruby-gems-system')
     .boolean('sassc')
+
     .argv;
 
 if(!argv['node_modules']     && 
