@@ -32,7 +32,7 @@
   },
   "bin": {
     "sassIncludePaths": "cli.js"
-  }
+  },
   "author": "strarsis <strarsis@gmail.com> (https://github.com/strarsis)",
   "license": "MIT",
   "description": "Generates include paths for node-sass for packages from popular package managers like npm, bower, ruby gem, ruby bundler.",
