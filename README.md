@@ -145,7 +145,7 @@ Example:
 $ npm install -g sass-include-paths
 $ sassc $(sass-include-paths --sassc --node_modules --bower_components) [...]
 ````
-Note: `$(...)` executes the command and re-use its stdout.
+Note: `$(...)` executes the command and re-uses its stdout.
 
 
 
