@@ -5,7 +5,8 @@
     "es6-shim": "^0.35.1",
     "glob": "^7.0.0",
     "sync-exec": "^0.6.2",
-    "uniq": "^1.0.1"
+    "uniq": "^1.0.1",
+    "yargs": "^6.1.1"
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.6",
