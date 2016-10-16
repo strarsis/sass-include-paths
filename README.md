@@ -143,7 +143,7 @@ For sassc-compatible options output, pass the --sassc switch.
 Example:
 ````
 $ npm install -g sass-include-paths
-$ sassc $(sass-include-paths --sassc --node_modules --bower_components) [...]
+$ sassc $(sassIncludePaths --sassc --node_modules --bower_components) [...]
 ````
 Note: `$(...)` executes the command and re-uses its stdout.
 
