@@ -25,6 +25,7 @@ if(!argv['node_modules']     &&
    !argv['ruby-gems-bundle'] && 
    !argv['ruby-gems-system']) {
   console.error('Warning: No include path sources selected by user.');
+  console.error('--sassc, --node_modules, --bower_components, --ruby-gems-bundle, --ruby-gems-system');
 }
 
 
