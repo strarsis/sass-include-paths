@@ -27,7 +27,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node test/test.js"
+    "test": "tape test/test*.js"
   },
   "author": "strarsis <strarsis@gmail.com> (https://github.com/strarsis)",
   "license": "MIT",
