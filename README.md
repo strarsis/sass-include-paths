@@ -137,6 +137,19 @@ Though it may work fine using this module, please still consider creating an iss
 to inform the package creator that eyeglass metadata is still missing for the package.
 
 
+### CLI/sassc usage
+A cli wrapper comes with this module which can generate the list of include paths to be used on cli.
+For sassc-compatible options output, pass the --sassc switch.
+Example:
+````
+$ npm install -g sass-include-paths
+$ sassc $(sass-include-paths --sassc --node_modules --bower_components) [...]
+````
+Note: `$(...)` executes the command and re-use its stdout.
+
+
+
+
 Development
 -----------
 In order to run the tests, npm, bower and ruby gem/bundler have to be available.
