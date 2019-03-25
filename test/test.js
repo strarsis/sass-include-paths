@@ -69,7 +69,7 @@ test('works with node_modules', function (t) {
 
 test('works with local ruby bundle', function (t) {
 
-  // $ rvm ruby-2.2.3@sass-include-paths --create
+  // $ rvm ruby-2.5.5@sass-include-paths --create
   // (in this package Gemfile)
   // modular-scale  2.1.1
   // toolkit        2.9.0
@@ -80,10 +80,10 @@ test('works with local ruby bundle', function (t) {
 
   t.plan(4);
   testFull(t, sassIncludePaths.rubyGemsBundle, sassIncludePaths.rubyGemsBundleSync, [
-    'vendor/bundle/ruby/2.2.0/gems/compass-core-1.0.3/stylesheets',
-    'vendor/bundle/ruby/2.2.0/gems/modular-scale-2.1.1/stylesheets',
-    'vendor/bundle/ruby/2.2.0/gems/shevy-2.1.0/core',
-    'vendor/bundle/ruby/2.2.0/gems/toolkit-2.9.0/stylesheets'
+    'vendor/bundle/ruby/2.5.0/gems/compass-core-1.0.3/stylesheets',
+    'vendor/bundle/ruby/2.5.0/gems/modular-scale-2.1.1/stylesheets',
+    'vendor/bundle/ruby/2.5.0/gems/shevy-2.1.0/core',
+    'vendor/bundle/ruby/2.5.0/gems/toolkit-2.9.0/stylesheets'
   ]);
 });
 
@@ -123,7 +123,7 @@ test('works with bower components folder', function (t) {
 /*
 test('works with global ruby gems', function (t) {
 
-  // $ rvm ruby-2.2.3@sass-include-paths --create
+  // $ rvm ruby-2.5.5@sass-include-paths --create
   // $ gem install modular-scale -v 2.1.1
   // $ gem install toolkit       -v 2.9.0
 
@@ -131,9 +131,9 @@ test('works with global ruby gems', function (t) {
 
   t.plan(3);
   testAbs(t, sassIncludePaths.rubyGems, sassIncludePaths.rubyGemsSync, [
-    '/home/build/.rvm/gems/ruby-2.2.3@sass-include-paths/gems/compass-core-1.0.3/stylesheets',
-    '/home/build/.rvm/gems/ruby-2.2.3@sass-include-paths/gems/modular-scale-2.1.1/stylesheets',
-    '/home/build/.rvm/gems/ruby-2.2.3@sass-include-paths/gems/toolkit-2.9.0/stylesheets'
+    '/home/build/.rvm/gems/ruby-2.5.5@sass-include-paths/gems/compass-core-1.0.3/stylesheets',
+    '/home/build/.rvm/gems/ruby-2.5.5@sass-include-paths/gems/modular-scale-2.1.1/stylesheets',
+    '/home/build/.rvm/gems/ruby-2.5.5@sass-include-paths/gems/toolkit-2.9.0/stylesheets'
   ]);
 });
 */
